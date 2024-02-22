@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle();" class="ml-0">
+            <mat-icon>menu </mat-icon>
+        </button>
+        <h1>Payroll Dashboard</h1>
+        <button class="ml-auto">
+          <a href="/login"> <mat-icon>input</mat-icon> </a>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="w-64">
+        <mat-nav-list class="ml-3">
+            <a router></a>
+            <a mat-list-item class="row" routerLink="/navbar-admin"> <mat-icon class="-mb-1 mr-2">home</mat-icon> Dashboard </a>            
+            <a mat-list-item class="row" routerLink="/movie"> <mat-icon class="-mb-1 mr-2">account_circle </mat-icon> Movie</a>
+            <a mat-list-item class="row" routerLink="/employee"> <mat-icon class="-mb-1 mr-2">list_alt </mat-icon> Data</a>
+            <a mat-list-item class="row" routerLink="/role"> <mat-icon class="-mb-1 mr-2">settings-applications </mat-icon> Role</a>
+            <a mat-list-item class="row" routerLink="/department"> <mat-icon class="-mb-1 mr-2">help</mat-icon> Department</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
